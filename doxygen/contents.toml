@@ -1,5 +1,5 @@
 [package]
-name = "cesentry-firmware"
+name = "subtle"
 
 [reference]
 type = "doxygen"

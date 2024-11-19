@@ -1,5 +1,5 @@
 [packages]
 
-[packages.cesentry-firmware]
+[packages.subtle]
 type = "local"
 package_dir = "doxygen"
