@@ -6,5 +6,7 @@ target/
 .idea/
 .mvn/
 
-# Antora
-dist/
+# Generated
+build
+subtle
+doxygen/xml

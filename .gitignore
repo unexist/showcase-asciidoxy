@@ -35,5 +35,7 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
 
-# Antora
-dist/
+# Generated
+build
+subtle
+doxygen/xml
