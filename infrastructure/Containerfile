@@ -4,4 +4,4 @@ MAINTAINER Christoph Kappel <christoph.kappel@ces.eu>
 
 RUN apk add --no-cache ruby doxygen py3-pip
 RUN gem install asciidoctor asciidoctor-rouge asciidoctor-diagram asciidoctor-multipage
-RUN pip3 install asciidoxy
+RUN pip3 install asciidoxy --break-system-packages
