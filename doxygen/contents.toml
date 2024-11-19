@@ -1,0 +1,6 @@
+[package]
+name = "cesentry-firmware"
+
+[reference]
+type = "doxygen"
+dir = "xml"
