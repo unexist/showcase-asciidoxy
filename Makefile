@@ -1,5 +1,5 @@
 MOUNTPATH := /asciidoxy
-VERSION := 0.1
+VERSION := 0.2
 
 --check-%:
 	@if [ "`command -v ${*}`" = "" ]; then \
@@ -17,7 +17,7 @@ hg.submod:
 doxygen: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
-		sh -c "cd $(MOUNTPATH) && doxygen"
+		sh -c "cd $(MOUNTPATH) && doxygen --version"
 
 doxygen-generate: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
@@ -27,7 +27,7 @@ doxygen-generate: --check-podman
 asciidoxy: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
-		sh -c "cd $(MOUNTPATH) && asciidoxy \
+		sh -c "cd $(MOUNTPATH) && asciidoxy --debug --log DEBUG \
 		--spec-file packages.toml \
 		--base-dir text \
 		--destination-dir build \
