@@ -1,4 +1,5 @@
 MOUNTPATH := /asciidoxy
+VERSION := 0.1
 
 --check-%:
 	@if [ "`command -v ${*}`" = "" ]; then \
@@ -13,21 +14,26 @@ git-submod:
 hg.submod:
 	hg up
 
-doxygen: --check-docker
-	docker run --rm -v .:$(MOUNTPATH) \
-		-it silvester747/asciidoxy:latest \
-		sh -c 'cd $(MOUNTPATH) && doxygen'
+doxygen: --check-podman
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && doxygen"
 
-asciidoxy: --check-docker
-	docker run --rm -v .:$(MOUNTPATH) \
-		-it silvester747/asciidoxy:latest \
-		sh -c 'cd $(MOUNTPATH) && asciidoxy \
+doxygen-generate: --check-podman
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && doxygen -g Doxyfile"
+
+asciidoxy: --check-podman
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && asciidoxy \
 		--spec-file packages.toml \
 		--base-dir text \
 		--destination-dir build \
 		--build-dir build \
 		-b adoc \
-		text/index.adoc'
+		text/index.adoc"
 
 docs: doxygen asciidoxy
 
