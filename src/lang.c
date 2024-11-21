@@ -37,7 +37,8 @@ static Language languages[] = {
 /** get_lang
  * @brief Helper to fetch given language
  * @param[in]  name  Name of the language
- * @return Returns either found translation in given language or default for \b EN
+ * @retval  Default   EN is the default is the couldn't be found
+ * @retval  Anything  Found translation in given language
  **/
 
 char *get_lang(const char *name) {
