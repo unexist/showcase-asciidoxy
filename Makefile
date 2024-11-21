@@ -17,7 +17,7 @@ hg.submod:
 doxygen: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
-		sh -c "cd $(MOUNTPATH) && doxygen --version"
+		sh -c "cd $(MOUNTPATH) && doxygen"
 
 doxygen-generate: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
@@ -27,13 +27,17 @@ doxygen-generate: --check-podman
 asciidoxy: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
-		sh -c "cd $(MOUNTPATH) && asciidoxy --debug --log DEBUG \
+		sh -c "cd $(MOUNTPATH) && asciidoxy \
 		--spec-file packages.toml \
 		--base-dir text \
 		--destination-dir build \
 		--build-dir build \
 		-b adoc \
 		text/index.adoc"
+
+clean:
+	rm -rf doxygen/xml
+	rm -rf build/*
 
 docs: doxygen asciidoxy
 
