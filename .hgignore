@@ -8,5 +8,5 @@ target/
 
 # Generated
 build
-subtle
 doxygen/xml
+src/hello
