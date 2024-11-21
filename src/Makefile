@@ -5,4 +5,4 @@
 	fi
 
 build: --check-clang
-	clang -Wall hello.c -o hello
+	clang -Wall hello.c lang.c -o hello

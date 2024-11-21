@@ -13,7 +13,7 @@
 
 #define LENGTH(a) (sizeof(a) / sizeof(a[0])) ///< Array length
 
-/** @struct Language
+/** @struct language_t
  * @brief Storage class for languages
  **/
 
@@ -34,10 +34,10 @@ static Language languages[] = {
     { .name = "NL", .world = "Wereld" }
 };
 
-/** @fn get_lang
+/** get_lang
  * @brief Helper to fetch given language
  * @param[in]  name  Name of the language
- * @return Returns either found translation in given language or default for \p EN
+ * @return Returns either found translation in given language or default for \b EN
  **/
 
 char *get_lang(const char *name) {

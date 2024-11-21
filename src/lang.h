@@ -12,8 +12,6 @@
 #ifndef LANG_H
 #define LANG_H 1
 
-
-
 /* Forward declarations */
 
 char *get_lang(const char *name); ///< Helper to fetch given language
