@@ -1,5 +1,5 @@
 # Input/Output
-INPUT             = subtle/
+INPUT             = src
 OUTPUT_DIRECTORY  = doxygen
 
 # Generators
@@ -8,8 +8,8 @@ GENERATE_LATEX    = NO
 GENERATE_XML      = YES
 
 # Project based
-PROJECT_NAME      = subtle
+PROJECT_NAME      = showcase-asciidoxy
 JAVADOC_AUTOBRIEF = YES
 JAVADOC_BANNER    = YES
-RECURSIVE         = YES
-EXTRACT_ALL       = YES
+#RECURSIVE         = YES
+#EXTRACT_ALL       = YES

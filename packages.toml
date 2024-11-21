@@ -1,5 +1,5 @@
 [packages]
 
-[packages.subtle]
+[packages.showcase-asciidoxy]
 type = "local"
 package_dir = "doxygen"
