@@ -9,16 +9,9 @@
  * See the file COPYING for details.
  **/
 
- #include <stdio.h>
+#include <stdio.h>
 
- /** @struct Language
-  * @brief Storage class for languages
-  **/
-
-typedef struct {
-    char *lang; ///< Language name
-    char *world; ///< Translation of the word 'world'
-} Language;
+#include "lang.h"
 
  /** main
   * @brief Main function
@@ -28,9 +21,8 @@ typedef struct {
   **/
 
  int main(int argc, char *argv[]) {
-    Language lang = { .lang = "NL", .world = "Wereld" };
 
-    printf("Hello, %s", lang.world);
+    printf("Hello, %s", get_lang("NL"));
 
     return 0;
  }
