@@ -1,5 +1,19 @@
-= cesentry-firmware
+= showcase-asciidoxy
 
-This is my first document written for AsciiDoxy.
+:1: https://doxygen.nl
+:2: https://asciidoxy.org
+:3: https://asciidoc.org/
+
+This is an example documentation which demonstrates the combination of {1}[Doxygen],
+{2}[Asciidoxy] and {3}[AsciiDoc].
 
 ${language("cpp")}
+
+== Structs
+
+${insert("Language")}
+
+== Functions
+
+${insert("get_lang")}
+${insert("main")}
