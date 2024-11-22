@@ -34,11 +34,10 @@ static Language languages[] = {
     { .name = "NL", .world = "Wereld" }
 };
 
-/** get_lang
- * @brief Helper to fetch given language
- * @param[in]  name  Name of the language
- * @retval  Default   EN is the default is the couldn't be found
- * @retval  Anything  Found translation in given language
+/**
+ * @detail
+ * We use iterate through the @ref Language instance to find the given language
+ * and return the default language if nothing could be found.
  **/
 
 char *get_lang(const char *name) {
