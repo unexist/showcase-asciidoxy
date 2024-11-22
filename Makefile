@@ -36,6 +36,14 @@ asciidoxy: --check-podman
 		-b adoc \
 		text/index.adoc"
 
+versions:
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && doxygen --version"
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && asciidoxy -h | grep -E '[0-9\.]{5}'"
+
 clean:
 	rm -rf doxygen/xml/*
 	rm -rf build/*
