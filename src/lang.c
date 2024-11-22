@@ -35,7 +35,7 @@ static Language languages[] = {
 };
 
 /**
- * @detail
+ * @details
  * We use iterate through the @ref Language instance to find the given language
  * and return the default language if nothing could be found.
  **/

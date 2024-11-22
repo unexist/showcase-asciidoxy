@@ -17,7 +17,7 @@
   * @brief Main function
   * @param[in]  argc  Number of arguments
   * @param[in]  argv  Array with passed commandline arguments
-  * @return Returns always \b zero
+  * @retval  0  Default return value
   **/
 
  int main(int argc, char *argv[]) {
