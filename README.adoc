@@ -7,3 +7,4 @@ This project holds an example for AsciiDoxy.
 - https://asciidoxy.org
 - https://doxygen.nl
 - https://www.doxygen.nl/manual/docblocks.html
+- https://micro-os-plus.github.io/develop/doxygen-style-guide/
