@@ -12,4 +12,8 @@ PROJECT_NAME      = showcase-asciidoxy
 JAVADOC_AUTOBRIEF = YES
 JAVADOC_BANNER    = YES
 #RECURSIVE         = YES
-#EXTRACT_ALL       = YES
+EXTRACT_ALL       = NO
+
+# Trick to force Doxygen not to ignore plantuml
+PLANTUML_JAR_PATH = /usr/share/java/plantuml/plantuml.jar
+

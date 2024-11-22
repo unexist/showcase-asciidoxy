@@ -28,6 +28,7 @@ asciidoxy: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
 		sh -c "cd $(MOUNTPATH) && asciidoxy \
+		--require asciidoctor-diagram \
 		--spec-file packages.toml \
 		--base-dir text \
 		--destination-dir build \
@@ -36,7 +37,7 @@ asciidoxy: --check-podman
 		text/index.adoc"
 
 clean:
-	rm -rf doxygen/xml
+	rm -rf doxygen/xml/*
 	rm -rf build/*
 
 docs: doxygen asciidoxy
