@@ -15,4 +15,4 @@ JAVADOC_BANNER    = YES
 EXTRACT_ALL       = NO
 
 # Trick to force Doxygen not to ignore plantuml
-PLANTUML_JAR_PATH = /usr/share/java/plantuml/plantuml.jar
+PLANTUML_JAR_PATH = /usr/share/java/plantuml.jar

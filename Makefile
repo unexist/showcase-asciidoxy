@@ -27,7 +27,6 @@ doxygen-generate: --check-podman
 asciidoxy: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
-		-e PLANTUML_JAR_PATH=/usr/share/java/plantuml/plantuml.jar \
 		sh -c "cd $(MOUNTPATH) && asciidoxy \
 		--require asciidoctor-diagram \
 		--spec-file packages.toml \
