@@ -13,7 +13,8 @@
 
 #define LENGTH(a) (sizeof(a) / sizeof(a[0])) ///< Array length
 
-/** @struct language_t
+/**
+ * @struct language_t
  * @brief Storage class for languages
  **/
 
@@ -22,7 +23,8 @@ struct language_t {
     char *world; ///< Language translation of the word 'world'
 };
 
-/** @typedef Language
+/**
+ * @typedef Language
  * @brief Convenience type definition for languages
  **/
 
