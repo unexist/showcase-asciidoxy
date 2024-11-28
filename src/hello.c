@@ -15,6 +15,12 @@
 
  /** main
   * @brief Main function
+  *
+  * @details
+  * @startuml
+  * main.c -> lang.c : get_lang()
+  * @enduml
+  *
   * @param[in]  argc  Number of arguments
   * @param[in]  argv  Array with passed commandline arguments
   * @retval  0  Default return value
