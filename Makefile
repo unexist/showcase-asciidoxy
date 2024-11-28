@@ -1,5 +1,5 @@
 MOUNTPATH := /asciidoxy
-VERSION := 0.2
+VERSION := 0.3
 
 --check-%:
 	@if [ "`command -v ${*}`" = "" ]; then \
@@ -27,6 +27,7 @@ doxygen-generate: --check-podman
 asciidoxy: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		-e PLANTUML_JAR_PATH=/usr/share/java/plantuml/plantuml.jar \
 		sh -c "cd $(MOUNTPATH) && asciidoxy \
 		--require asciidoctor-diagram \
 		--spec-file packages.toml \
