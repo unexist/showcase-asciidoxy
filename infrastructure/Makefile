@@ -18,8 +18,3 @@ build: --check-podman
 docker-push: --check-podman --guard-VERSION build
 	podman login docker.io
 	podman push $(IMAGE_NAME):latest docker.io/$(USER)/$(IMAGE_NAME):$(VERSION)
-
-gitlab-push: --check-podman --guard-REGISTRY_URL --guard-VERSION build
-	podman login $(REGISTRY_URL)
-	podman push --tls-verify=false  \
-		$(IMAGE_NAME):latest $(REGISTRY_URL)/documentation/cesentry-firmware/$(IMAGE_NAME):$(VERSION)
