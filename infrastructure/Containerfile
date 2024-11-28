@@ -2,6 +2,6 @@ FROM docker.io/maven:3.9.9-eclipse-temurin-11-alpine
 
 MAINTAINER Christoph Kappel <christoph.kappel@ces.eu>
 
-RUN apk add --no-cache ruby doxygen python3 py3-pip
+RUN apk add --no-cache ruby doxygen python3 py3-pip plantuml
 RUN gem install asciidoctor asciidoctor-rouge asciidoctor-diagram asciidoctor-multipage
 RUN pip3 install asciidoxy --break-system-packages
