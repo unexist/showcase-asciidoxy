@@ -38,7 +38,7 @@ static Language languages[] = {
 
 /**
  * @details
- * We use iterate through the @ref language_t instance to find the given language
+ * We iterate through the @ref language_t instance to find the given language
  * and return the default language if nothing could be found.
  **/
 
