@@ -5,7 +5,7 @@
 :3: https://asciidoc.org/
 
 This is an example documentation which demonstrates the combination of {1}[Doxygen],
-{2}[Asciidoxy] and {3}[AsciiDoc].
+{2}[AsciiDoxy] and {3}[AsciiDoc].
 
 ${language("cpp")}
 
