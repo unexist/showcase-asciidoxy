@@ -38,4 +38,5 @@ release.properties
 # Generated
 build
 doxygen/xml
+doxygen/html
 src/hello

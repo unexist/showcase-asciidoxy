@@ -9,4 +9,5 @@ target/
 # Generated
 build
 doxygen/xml
+doxygen/html
 src/hello
