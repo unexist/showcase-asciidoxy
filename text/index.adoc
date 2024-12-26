@@ -4,8 +4,8 @@
 :2: https://asciidoxy.org
 :3: https://asciidoc.org/
 
-This is an example documentation which demonstrates the combination of {1}[Doxygen],
-{2}[AsciiDoxy] and {3}[AsciiDoc].
+This is an example documentation which demonstrates the combination of {1}[Doxygen], {2}[AsciiDoxy]
+and {3}[AsciiDoc].
 
 ${language("cpp")}
 
@@ -15,5 +15,5 @@ ${insert("Language")}
 
 == Functions
 
-${insert("get_lang")}
+##${insert("get_lang")}
 ${insert("main")}
