@@ -33,6 +33,7 @@ asciidoxy: --check-podman
 		--base-dir text \
 		--destination-dir src/site/asciidoc \
 		--build-dir build \
+		--template-dir templates \
 		-b adoc \
 		text/index.adoc"
 

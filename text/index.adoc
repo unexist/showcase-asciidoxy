@@ -13,6 +13,7 @@ ${language("cpp")}
 
 ##${insert("get_lang")}
 ${insert("main", leveloffset=2)}
+${insert("main", leveloffset=2, template="customfunc")}
 
 == Structs
 
