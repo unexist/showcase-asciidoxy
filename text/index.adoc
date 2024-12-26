@@ -9,11 +9,11 @@ and {3}[AsciiDoc].
 
 ${language("cpp")}
 
-== Structs
-
-${insert("Language")}
-
 == Functions
 
 ##${insert("get_lang")}
-${insert("main")}
+${insert("main", leveloffset=2)}
+
+== Structs
+
+${insert("Language", leveloffset=2)}
