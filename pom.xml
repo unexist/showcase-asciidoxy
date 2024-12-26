@@ -26,14 +26,14 @@
 
         <!-- Confluence config -->
         <!-- NOTE: Be careful with the ancestorID, everything will be overwritten -->
-        <confluence.url>https://unexist.dev</confluence.url>
         <confluence.publishingStrategy>APPEND_TO_ANCESTOR</confluence.publishingStrategy>
 
         <!-- Provide these values from env; don't commit them! -->
-        <confluence.spaceKey></confluence.spaceKey>
-        <confluence.ancestorId></confluence.ancestorId>
-        <confluence.publisherUserName></confluence.publisherUserName>
-        <confluence.publisherPassword></confluence.publisherPassword>
+        <confluence.url>${env.CONFLUENCE_URL}</confluence.url>
+        <confluence.spaceKey>${env.CONFLUENCE_SPACE_KEY}</confluence.spaceKey>
+        <confluence.ancestorId>${env.CONFLUENCE_ANCESTOR_ID}</confluence.ancestorId>
+        <confluence.publisherUserName>${env.CONFLUENCE_USER}</confluence.publisherUserName>
+        <confluence.publisherPassword>${env.CONFLUENCE_TOKEN}</confluence.publisherPassword>
     </properties>
 
     <licenses>
