@@ -17,9 +17,9 @@
 
         <confluence.publisher.version>0.12.0</confluence.publisher.version>
 
-        <sourceDirectory>./src/main/asciidoc</sourceDirectory>
+        <sourceDirectory>./src/site/asciidoc</sourceDirectory>
         <outputDirectory>./target/static/documentation</outputDirectory>
-        <asciidocDirectory>./src/main/asciidoc</asciidocDirectory>
+        <asciidocDirectory>./src/site/asciidoc</asciidocDirectory>
 
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
@@ -93,7 +93,7 @@
                     <logHandler>
                         <outputToConsole>true</outputToConsole>
                         <failIf>
-                            <severity>DEBUG</severity>
+                            <severity>ERROR</severity>
                         </failIf>
                     </logHandler>
                 </configuration>
