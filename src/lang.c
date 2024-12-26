@@ -1,7 +1,7 @@
 /**
  * @package showcase-asciidoxy
  *
- * @file hello.c
+ * @file lang.c
  * @copyright 2024-present Christoph Kappel <christoph@unexist.dev>
  * @version $Id$
  *

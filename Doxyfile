@@ -1,9 +1,10 @@
 # Input/Output
 INPUT             = src
 OUTPUT_DIRECTORY  = doxygen
+FILE_PATTERNS     = *.c *.h
 
 # Generators
-GENERATE_HTML     = NO
+GENERATE_HTML     = YES
 GENERATE_LATEX    = NO
 GENERATE_XML      = YES
 
