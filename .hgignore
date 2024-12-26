@@ -11,3 +11,4 @@ build
 doxygen/xml
 doxygen/html
 src/hello
+src/site/asciidoc
