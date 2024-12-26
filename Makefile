@@ -41,6 +41,9 @@ asciidoc: --check-podman
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
 		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml generate-resources"
 
+asciidoc-local: --check-mvn
+	mvn -f pom.xml generate-resources
+
 versions:
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
