@@ -7,12 +7,11 @@ VERSION := 0.3
 		exit 1; \
 	fi
 
-git-submod:
-	git submodule init
-	git submodule update
-
-hg.submod:
-	hg up
+--guard-%:
+	@if [ "${${*}}" = "" ]; then \
+		echo "Environment variable $* not set: $*=abc123 make $(MAKECMDGOALS)"; \
+		exit 1; \
+	fi
 
 doxygen: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
@@ -45,6 +44,12 @@ asciidoc: --check-podman
 
 asciidoc-local: --check-mvn
 	mvn -f pom.xml generate-resources
+
+publish: --check-podman --guard-CONFLUENCE_URL --guard-CONFLUENCE_SPACE_KEY --guard-CONFLUENCE_ANCESTOR_ID --guard-CONFLUENCE_USER --guard-CONFLUENCE_TOKEN
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		--dns 8.8.8.8 \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml -P generate-docs-and-publish generate-resources"
 
 versions:
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
