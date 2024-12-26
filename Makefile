@@ -31,10 +31,15 @@ asciidoxy: --check-podman
 		--require asciidoctor-diagram \
 		--spec-file packages.toml \
 		--base-dir text \
-		--destination-dir build \
+		--destination-dir src/site/asciidoc \
 		--build-dir build \
 		-b adoc \
 		text/index.adoc"
+
+asciidoc: --check-podman
+	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml generate-resources"
 
 versions:
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
@@ -45,11 +50,16 @@ versions:
 		sh -c "cd $(MOUNTPATH) && asciidoxy -h | grep -E '[0-9\.]{5}'"
 
 clean:
-	rm -rf doxygen/xml/*
 	rm -rf build/*
+	rm -rf doxygen/xml/*
+	rm -rf doxygen/html/*
+	rm -rf src/site/asciidoc/*
 
-docs: doxygen asciidoxy
+docs: doxygen asciidoxy asciidoc
 
 open-doxygen: --check-open
 	open doxygen/html/index.html
+
+open-asciidoc: --check-open
+	open target/static/documentation/index.html
 
