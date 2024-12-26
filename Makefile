@@ -39,6 +39,7 @@ asciidoxy: --check-podman
 
 asciidoc: --check-podman
 	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
+		--dns 8.8.8.8 \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
 		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml generate-resources"
 
