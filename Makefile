@@ -37,8 +37,7 @@ asciidoxy: --check-podman
 		text/index.adoc"
 
 asciidoc: --check-podman
-	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
-		--dns 8.8.8.8 \
+	podman run --rm --dns 8.8.8.8 -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
 		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml generate-resources"
 
@@ -46,9 +45,13 @@ asciidoc-local: --check-mvn
 	mvn -f pom.xml generate-resources
 
 publish: --check-podman --guard-CONFLUENCE_URL --guard-CONFLUENCE_SPACE_KEY --guard-CONFLUENCE_ANCESTOR_ID --guard-CONFLUENCE_USER --guard-CONFLUENCE_TOKEN
-	podman run --rm -v $(CURDIR):$(MOUNTPATH) \
-		--dns 8.8.8.8 \
+	podman run --rm --dns 8.8.8.8 -v $(CURDIR):$(MOUNTPATH) \
 		-it docker.io/unexist/asciidoxy-builder:$(VERSION) \
+        -e CONFLUENCE_URL \
+        -e CONFLUENCE_SPACE_KEY \
+        -e CONFLUENCE_ANCESTOR_ID \
+        -e CONFLUENCE_USER \
+        -e CONFLUENCE_TOKEN \
 		sh -c "cd $(MOUNTPATH) && mvn -f pom.xml -P generate-docs-and-publish generate-resources"
 
 versions:
