@@ -11,8 +11,8 @@ ${language("cpp")}
 
 == Functions
 
-##${insert("get_lang")}
-${insert("main", leveloffset=2)}
+${insert("get_lang", allow_overloads=True)}
+##${insert("main", leveloffset=2)}
 ${insert("main", leveloffset=2, template="customfunc")}
 
 == Structs
